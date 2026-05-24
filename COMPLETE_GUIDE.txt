@@ -1,0 +1,528 @@
+ADROX E-Commerce Website - Complete Documentation
+==================================================
+
+PROJECT OVERVIEW
+================
+
+Your ADROX e-commerce website is a complete affiliate-based platform featuring:
+- Premium product showcase
+- 3D animations and interactive UI
+- Full PHP/MySQL backend
+- Admin panel for product management
+- Responsive design (mobile, tablet, desktop)
+- Professional branding with Adrox colors
+
+═══════════════════════════════════════════════════════════════
+
+INSTALLATION & SETUP
+====================
+
+STEP 1: INSTALL XAMPP
+- Download XAMPP from https://www.apachefriends.org/
+- Install to default location
+- Start Apache and MySQL
+
+STEP 2: LOCATE FILES
+- Place all files in: C:\xampp\htdocs\adrox\
+
+STEP 3: RUN SETUP
+- Open browser
+- Go to: http://localhost/adrox/setup.php
+- Wait for setup to complete (should see green checkmarks)
+
+STEP 4: ACCESS WEBSITE
+- Website: http://localhost/adrox/
+- Admin Panel: http://localhost/adrox/admin/
+- Status Page: http://localhost/adrox/status.php
+
+═══════════════════════════════════════════════════════════════
+
+FILE STRUCTURE
+==============
+
+adrox/
+├── index.php                    # Main website
+├── setup.php                    # Database initialization
+├── status.php                   # Configuration status
+├── README.md                    # Main documentation
+├── QUICK_START.txt             # Quick start guide
+├── COMPLETE_GUIDE.txt          # This file
+├── .htaccess                   # Server configuration
+│
+├── admin/
+│   └── index.php               # Admin dashboard & product management
+│
+├── includes/
+│   ├── config.php              # Database configuration & constants
+│   ├── functions.php           # Database functions
+│   ├── api.php                 # REST API endpoints
+│   ├── db_init.php             # Database initialization
+│   └── database.sql            # SQL schema
+│
+└── assets/
+    ├── css/
+    │   └── style.css           # Main stylesheet (Adrox branded)
+    ├── js/
+    │   ├── 3d-animation.js     # 3D animations (Three.js)
+    │   └── main.js             # Core functionality
+    └── images/
+        └── logo.png            # Place Adrox logo here
+
+═══════════════════════════════════════════════════════════════
+
+BRAND COLOR PALETTE
+===================
+
+Primary Red:    #E60012  - Main action buttons, headings, accents
+Dark Gray:      #2c2c2c  - Text, dark backgrounds
+Light Gray:     #f5f5f5  - Light backgrounds, cards
+Accent Gold:    #d4a574  - Luxury highlights, premium feel
+White:          #ffffff  - Clean backgrounds
+
+Colors are automatically applied throughout the website.
+To customize, edit: assets/css/style.css
+
+═══════════════════════════════════════════════════════════════
+
+ADMIN PANEL GUIDE
+=================
+
+ACCESS: http://localhost/adrox/admin/
+LOGIN: username: admin | password: admin123
+
+FEATURES:
+1. Dashboard - Overview of all products
+2. Add Product - Add new affiliate products
+3. Edit Product - Modify existing products
+4. Delete Product - Remove products
+5. Featured Products - Mark products for homepage display
+6. Categories - Manage product categories
+
+ADDING A PRODUCT:
+1. Click "Add New Product" button
+2. Fill in:
+   - Product Name (e.g., "Premium Mobile Cover")
+   - Description (detailed product info)
+   - Price (₹)
+   - Category (Mobile Covers, Car Keys, etc.)
+   - Affiliate Link (where to redirect on "Buy")
+   - Image URL (optional)
+   - Featured (checkbox - shows on homepage)
+3. Click "Save Product"
+
+AFFILIATE LINK:
+- This is the URL users go to when clicking "Buy Now"
+- Could be Amazon, Flipkart, AliExpress, eBay, etc.
+- Use your affiliate tracking link for earnings
+- Example: https://amazon.in/s?k=mobile+cover&ref=adrox
+
+═══════════════════════════════════════════════════════════════
+
+DATABASE STRUCTURE
+==================
+
+DATABASE NAME: adrox_ecommerce
+
+TABLES:
+1. products
+   - id: Product ID
+   - name: Product name
+   - description: Detailed description
+   - price: Price (₹)
+   - category: Product category
+   - image_url: Image URL
+   - affiliate_link: Buy link (where user is redirected)
+   - is_featured: 1=Featured, 0=Normal
+   - created_at: Creation date
+   - updated_at: Last update
+
+2. categories
+   - id: Category ID
+   - name: Category name (e.g., "Mobile Covers")
+   - description: Category description
+   - created_at: Creation date
+
+3. admin_users
+   - id: User ID
+   - username: Login username
+   - password: Login password
+   - email: Email address
+   - created_at: Creation date
+
+4. contact_messages
+   - id: Message ID
+   - name: Sender name
+   - email: Sender email
+   - message: Message content
+   - created_at: Submission date
+
+═══════════════════════════════════════════════════════════════
+
+API ENDPOINTS
+=============
+
+All API calls return JSON responses.
+
+GET /includes/api.php?action=featured
+- Returns 6 featured products
+
+GET /includes/api.php?action=products
+- Returns all products
+
+GET /includes/api.php?action=products&category=Mobile+Covers
+- Returns products from specific category
+
+GET /includes/api.php?action=categories
+- Returns all categories
+
+GET /includes/api.php?action=product&id=1
+- Returns single product details
+
+POST /includes/api.php?action=contact
+- Saves contact form message
+- Body: {"name":"", "email":"", "message":""}
+
+═══════════════════════════════════════════════════════════════
+
+3D ANIMATIONS
+=============
+
+POWERED BY: Three.js (WebGL 3D Library)
+
+ANIMATIONS INCLUDED:
+1. Hero Section
+   - Rotating 3D cube (Red - Adrox primary)
+   - Rotating 3D sphere (Gold - luxury accent)
+   - Multiple light sources
+   - Responsive canvas
+
+2. Page Animations
+   - Smooth scroll animations
+   - Product card hover effects
+   - Button animations
+   - Fade-in on scroll
+
+3. Transitions
+   - Smooth transitions between sections
+   - Product filtering animations
+   - Menu animations
+
+═══════════════════════════════════════════════════════════════
+
+WEBSITE SECTIONS
+================
+
+1. HEADER/NAVIGATION
+   - Adrox logo
+   - Navigation menu
+   - Links to all sections
+   - Fixed on scroll
+
+2. HERO SECTION
+   - Main banner with 3D animation
+   - Call-to-action button
+   - Brand messaging
+
+3. FEATURED PRODUCTS
+   - Homepage products
+   - Only 6 best/featured products
+   - Click "Buy Now" → redirects to affiliate link
+
+4. CATEGORIES
+   - Mobile Covers
+   - Car Key Covers
+   - Accessories
+   - Tech Gadgets
+   - Click category → filters products
+
+5. ALL PRODUCTS
+   - Complete product list
+   - Shows all products from database
+   - Category filtering
+
+6. ABOUT SECTION
+   - Brand story
+   - Company values
+   - Why choose ADROX
+
+7. CONTACT SECTION
+   - Contact form
+   - Saves to database
+   - Gets sent to admin
+
+8. FOOTER
+   - Quick links
+   - Category links
+   - Contact info
+   - Social links (can be added)
+
+═══════════════════════════════════════════════════════════════
+
+AFFILIATE MARKETING SETUP
+=========================
+
+STEP 1: CHOOSE AFFILIATE PROGRAMS
+- Amazon Associates (amazon.in)
+- Flipkart Affiliate
+- AliExpress
+- eBay Associates
+- Other affiliate networks
+
+STEP 2: GET AFFILIATE LINKS
+- Join the program
+- Get your affiliate tracking link
+- Copy the link format
+
+STEP 3: ADD TO PRODUCTS
+- Go to Admin Panel
+- Add/Edit product
+- Paste affiliate link in "Affiliate Link" field
+- Save product
+
+STEP 4: EARN COMMISSIONS
+- Users click "Buy Now"
+- Redirected to affiliate link with your tracking ID
+- Purchase tracked as your sale
+- Earn commission
+
+EXAMPLE AFFILIATE LINKS:
+
+Mobile Covers:
+https://amazon.in/s?k=mobile+cover&ref_=adrox_shop
+
+Car Key Covers:
+https://amazon.in/s?k=car+key+cover&ref_=adrox_shop
+
+Tech Gadgets:
+https://amazon.in/s?k=wireless+charger&ref_=adrox_shop
+
+═══════════════════════════════════════════════════════════════
+
+CUSTOMIZATION GUIDE
+===================
+
+1. CHANGE LOGO
+   - Replace: assets/images/logo.png
+   - With: Your Adrox logo file
+   - Logo should be square or rectangular
+
+2. CHANGE COLORS
+   Edit: assets/css/style.css
+   Find :root section and update colors
+
+3. CHANGE PRODUCT CATEGORIES
+   - Go to Admin Panel
+   - Or edit database directly
+   - Add/remove categories
+
+4. ADD NEW PAGES
+   - Create new .php file
+   - Include header/footer
+   - Include CSS and JS files
+
+5. CUSTOMIZE TEXT
+   - Edit index.php for static text
+   - Edit style.css for font sizes
+   - Edit admin/index.php for admin text
+
+═══════════════════════════════════════════════════════════════
+
+TROUBLESHOOTING
+===============
+
+ISSUE: Website shows blank page
+FIX:
+1. Check if Apache/MySQL are running
+2. Check file permissions
+3. Check browser console (F12) for errors
+4. Check PHP error log
+
+ISSUE: Database not connecting
+FIX:
+1. Start MySQL in XAMPP
+2. Check credentials in config.php
+3. Check if adrox_ecommerce database exists
+4. Run setup.php again
+
+ISSUE: 3D animations not showing
+FIX:
+1. Update browser (use Chrome, Firefox, Safari)
+2. Check graphics card/GPU
+3. Clear browser cache
+4. Check console for WebGL errors
+
+ISSUE: Products not loading
+FIX:
+1. Run setup.php
+2. Check database connection
+3. Verify products table exists
+4. Check affiliate links are valid URLs
+
+ISSUE: Admin login fails
+FIX:
+1. Username: admin
+2. Password: admin123
+3. Both must be exact match
+4. Check for typos
+
+═══════════════════════════════════════════════════════════════
+
+SECURITY NOTES
+==============
+
+DEVELOPMENT (LOCAL):
+- Admin password hardcoded
+- SQL queries use basic escaping
+- HTTP only (no HTTPS)
+- Not meant for production
+
+PRODUCTION CONSIDERATIONS:
+1. Use password_hash() for admin passwords
+2. Use prepared statements for all queries
+3. Implement SSL/HTTPS
+4. Add CSRF token protection
+5. Add input validation on client & server
+6. Use environment variables for secrets
+7. Add rate limiting
+8. Log all admin actions
+9. Implement proper authentication
+10. Regular security audits
+
+═══════════════════════════════════════════════════════════════
+
+PERFORMANCE TIPS
+================
+
+1. Optimize images (compress/resize)
+2. Use lazy loading for product images
+3. Cache database queries
+4. Minimize CSS/JS files
+5. Use CDN for Three.js library
+6. Implement caching headers
+7. Compress gzip responses
+8. Minimize 3D animations on mobile
+
+═══════════════════════════════════════════════════════════════
+
+BACKUP & MAINTENANCE
+====================
+
+REGULAR BACKUPS:
+1. Export database monthly
+   - MySQL Workbench
+   - phpMyAdmin
+   - Command line: mysqldump
+
+2. Backup files regularly
+   - Use Windows backup
+   - Cloud storage (Dropbox, OneDrive)
+   - Git repository
+
+UPDATES:
+1. Keep PHP updated
+2. Keep MySQL updated
+3. Keep Three.js updated
+4. Monitor security advisories
+
+═══════════════════════════════════════════════════════════════
+
+MARKETING TIPS
+==============
+
+1. SEO OPTIMIZATION
+   - Add meta descriptions
+   - Use proper heading hierarchy
+   - Create XML sitemap
+   - Submit to Google Search Console
+
+2. SOCIAL MEDIA
+   - Share product links
+   - Use product images
+   - Create content around products
+   - Link back to website
+
+3. CONTENT MARKETING
+   - Write product reviews
+   - Create comparison articles
+   - Share customer testimonials
+   - Blog posts about products
+
+4. EMAIL MARKETING
+   - Build email list
+   - Send product recommendations
+   - Special deals/offers
+   - Newsletter
+
+5. AFFILIATE OPTIMIZATION
+   - Use relevant links
+   - Clear product descriptions
+   - Good quality images
+   - Call-to-action buttons
+
+═══════════════════════════════════════════════════════════════
+
+MONETIZATION
+============
+
+REVENUE STREAMS:
+1. Affiliate commissions (primary)
+   - Amazon: 3-5% commission
+   - Flipkart: 2-10% depending on category
+   - Other platforms: varies
+
+2. Sponsored products
+   - Brands pay to be featured
+   - Premium listings
+
+3. Display ads
+   - Google AdSense
+   - Other ad networks
+
+4. Sponsored reviews
+   - Review affiliate products
+
+═══════════════════════════════════════════════════════════════
+
+CONTACT & SUPPORT
+=================
+
+DATABASE ISSUES:
+- Check MySQL is running
+- Verify database name and credentials
+- Run setup.php to reinitialize
+
+PHP ISSUES:
+- Check PHP version (7.4+)
+- Check error logs
+- Verify mod_rewrite is enabled
+
+BROWSER ISSUES:
+- Update browser
+- Clear cache
+- Check console (F12)
+- Try different browser
+
+═══════════════════════════════════════════════════════════════
+
+NEXT STEPS
+==========
+
+1. ✅ Website is ready
+2. Replace logo with Adrox logo
+3. Add your affiliate links
+4. Add more products
+5. Customize colors if needed
+6. Test on mobile devices
+7. Deploy to production (when ready)
+8. Set up analytics (Google Analytics)
+9. Start marketing
+10. Monitor and optimize
+
+═══════════════════════════════════════════════════════════════
+
+Your ADROX E-Commerce website is complete and ready to use!
+
+Built with ❤️ for Luxury Meets Technology
+© 2026 ADROX - All Rights Reserved
+
+═══════════════════════════════════════════════════════════════

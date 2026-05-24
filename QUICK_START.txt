@@ -1,0 +1,205 @@
+ADROX E-Commerce Website - Quick Start Guide
+============================================
+
+🚀 GETTING STARTED
+
+1. LOCATE FILES
+   - Extract all files to: C:\xampp\htdocs\adrox\
+
+2. START SERVICES
+   - Open XAMPP Control Panel
+   - Click "Start" for Apache
+   - Click "Start" for MySQL
+
+3. INITIALIZE WEBSITE
+   - Open browser
+   - Go to: http://localhost/adrox/setup.php
+   - Wait for setup to complete
+
+4. ACCESS WEBSITE
+   - Main Website: http://localhost/adrox/
+   - Admin Panel: http://localhost/adrox/admin/
+   - Admin Password: admin / admin123
+
+═════════════════════════════════════════════════════════════════
+
+📱 PRODUCT CATEGORIES
+
+1. Mobile Covers 📱
+   - Phone screen protectors
+   - Phone cases
+   - Phone covers and sleeves
+
+2. Car Key Covers 🔑
+   - Leather key covers
+   - Key protectors
+   - Key holders
+
+3. Accessories ✨
+   - Lifestyle items
+   - Premium gifts
+   - Fashion accessories
+
+4. Tech Gadgets ⚡
+   - Wireless chargers
+   - Power banks
+   - Latest tech items
+
+═════════════════════════════════════════════════════════════════
+
+🔗 AFFILIATE LINKS GUIDE
+
+When a user clicks the "Buy Now" button, they will be redirected to 
+the affiliate link you set for that product.
+
+EXAMPLES OF AFFILIATE LINKS:
+
+Amazon India (Mobile Covers):
+https://amazon.in/s?k=mobile+cover&ref_=adrox
+
+Amazon India (Car Key Covers):
+https://amazon.in/s?k=car+key+cover&ref_=adrox
+
+Flipkart (Mobile Covers):
+https://www.flipkart.com/search?q=mobile+cover
+
+eBay (Car Accessories):
+https://www.ebay.com/sch/i.html?_nkw=car+key+cover
+
+AliExpress:
+https://www.aliexpress.com/wholesale?SearchText=mobile+cover
+
+IMPORTANT:
+- Replace AFFILIATE_LINK_HERE with your actual affiliate links
+- Each product should have its own affiliate tracking link
+- Links should be complete URLs starting with http:// or https://
+
+═════════════════════════════════════════════════════════════════
+
+⚙️ ADMIN PANEL FEATURES
+
+Login: admin@adrox.com
+Password: admin123
+
+Features:
+✓ Add new products
+✓ Edit existing products
+✓ Delete products
+✓ Mark products as featured
+✓ Set affiliate links for each product
+✓ Manage product categories
+✓ View all products
+
+═════════════════════════════════════════════════════════════════
+
+🎨 BRAND COLORS (Adrox)
+
+Primary Colors:
+- Red: #E60012 (Main brand color - used for buttons, accents)
+- Dark Gray: #2c2c2c (Text and dark backgrounds)
+- Light Gray: #f5f5f5 (Light backgrounds)
+- Gold: #d4a574 (Luxury accents)
+- White: #ffffff (Clean backgrounds)
+
+These colors are automatically applied throughout the website
+based on the Adrox logo you provided.
+
+═════════════════════════════════════════════════════════════════
+
+📝 DATABASE INFORMATION
+
+Database Name: adrox_ecommerce
+Default User: root
+Default Password: (blank)
+
+Tables Created:
+- products (with sample data)
+- categories (Mobile Covers, Car Key Covers, etc.)
+- admin_users (admin account)
+- contact_messages (contact form submissions)
+
+Connection: localhost
+
+═════════════════════════════════════════════════════════════════
+
+🎯 ADDING YOUR FIRST PRODUCT
+
+1. Go to http://localhost/adrox/admin/
+2. Login with: admin / admin123
+3. Click "Add New Product"
+4. Fill in details:
+   - Product Name: e.g., "Premium Mobile Cover"
+   - Description: e.g., "Red luxury mobile cover with protection"
+   - Price: e.g., 299
+   - Category: e.g., "Mobile Covers"
+   - Affiliate Link: Your affiliate link
+   - Mark as Featured: Check if you want it on homepage
+5. Click "Save Product"
+
+The product will now appear on your website!
+
+═════════════════════════════════════════════════════════════════
+
+🌍 FEATURED PRODUCTS
+
+When you mark a product as "Featured" in the admin panel:
+- It appears on the homepage
+- It gets priority in search results
+- It has a special visual indicator
+- Maximum 6 featured products on homepage
+
+═════════════════════════════════════════════════════════════════
+
+📊 3D ANIMATIONS
+
+The website includes 3D animations on:
+- Hero section (rotating 3D objects)
+- Product cards (hover effects)
+- Smooth scroll animations
+
+The 3D animations are powered by Three.js library
+and automatically work in all modern browsers.
+
+═════════════════════════════════════════════════════════════════
+
+💡 TIPS FOR SUCCESS
+
+1. Use high-quality affiliate links
+2. Keep descriptions clear and concise
+3. Mark 3-4 best products as featured
+4. Update products regularly
+5. Use proper affiliate tracking links
+6. Test links before going live
+7. Monitor affiliate revenue
+8. Add products from multiple categories
+
+═════════════════════════════════════════════════════════════════
+
+⚠️ IMPORTANT NOTES
+
+- Backup your database regularly
+- Keep affiliate links updated
+- Change admin password in production
+- Use SSL/HTTPS on live servers
+- Keep all software updated
+- Test all affiliate links regularly
+
+═════════════════════════════════════════════════════════════════
+
+📞 FILE LOCATIONS
+
+Main Files:
+- Website: C:\xampp\htdocs\adrox\index.php
+- Admin: C:\xampp\htdocs\adrox\admin\index.php
+- Styles: C:\xampp\htdocs\adrox\assets\css\style.css
+- Scripts: C:\xampp\htdocs\adrox\assets\js\
+
+Database Files:
+- Config: C:\xampp\htdocs\adrox\includes\config.php
+- Functions: C:\xampp\htdocs\adrox\includes\functions.php
+- API: C:\xampp\htdocs\adrox\includes\api.php
+
+═════════════════════════════════════════════════════════════════
+
+Enjoy your ADROX e-commerce website!
+Built with ❤️ for Luxury Meets Technology
